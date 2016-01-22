@@ -3,7 +3,8 @@ a web application to see apc status on many server
 
 edit config on apc.conf.php
 
-’’’’
+
+```php
 
 $Server = array(
     'local' => 'apc_json.php', // for local use only
@@ -11,4 +12,4 @@ $Server = array(
 );
 
 
-’’’’
+```
