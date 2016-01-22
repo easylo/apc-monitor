@@ -1,0 +1,16 @@
+# ALLOW USER BY IP
+# apache 2.2
+# <Limit GET POST>
+#   order deny,allow
+#   deny from all
+#   allow from 192.168.0.
+#   allow from 127.0.0.1
+# </Limit>
+
+# ALLOW USER BY IP
+# apache 2.4
+# <Limit GET POST>
+#   Require all denied
+#   Require ip 192.168.10.
+#   Require ip 127.0.0.1
+# </Limit>
