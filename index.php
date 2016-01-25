@@ -25,7 +25,7 @@ foreach ($Server as $name => $dataUrl) {
   }
 
 //var_dump($data);
-    $tpl = new Template("template/graph_row.tpl");
+    $tpl = new Template("template/graph_row0.tpl");
     $tpl->set('id', $id);
     $tpl->set('name', $name);
     $tpl->set('expunges', $data['apc']['expunges']);
@@ -44,7 +44,7 @@ foreach ($Server as $name => $dataUrl) {
 
     $tpl->set('graph1_lib1_color', '#5dd0fb'); //#e5e8eb // light
     $tpl->set('graph1_lib2_color', '#e5e8eb'); // 2bbfba // green
-    $tpl->set('graph2_lib1_color', '#5dd0fb'); // 5dd0fb// blue
+    $tpl->set('graph2_lib1_color', '#2bbfba'); // 5dd0fb// blue
     $tpl->set('graph2_lib2_color', '#e5e8eb');
 
     $tpl->set('graph1_title', 'Memory Usage');

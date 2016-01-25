@@ -1,0 +1,84 @@
+
+body{
+	font-family: 'Oxygen', sans-serif !important;
+	background:#ecf0f1;
+}
+/*-- main --*/
+.main{
+	width: 95%;
+    margin: 0 auto;
+	/*padding:5em;*/
+}
+
+.area_chart_left{
+	float:left;
+	width:30%;
+	padding:10px;
+	margin: 5px;
+	background:#fff;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.area_chart_right{
+	float:right;
+	width:35%;
+	padding:1em;
+	background:#fff;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.line_left h3,.area_chart_left h3,.area_chart_right h3,.area_chart_right h3{
+	font-size:1.5em;
+	color:#000;
+	margin:0 0 1em;
+	font-weight: 600;
+}
+.line_left ul li,.area_chart_left_r ul li,.area_chart_left_l ul li{
+	display:block;
+	font-size:1em;
+	color:#000;
+	margin-left:1em;
+	position:relative;
+}
+
+
+.line_left ul li.lab1:before,.area_chart_left_r ul li.lab1:before, .area_chart_left_l ul li.lab1:before{
+
+    width: 13px;
+    height: 13px;
+    border-radius: 20px;
+    content: '';
+    position: absolute;
+    left:-15px;
+    top: 15%;
+}
+.line_left ul li.lab2:before,.area_chart_left_r ul li.lab2:before,.area_chart_left_l ul li.lab2:before{
+
+    width: 13px;
+    height: 13px;
+    border-radius: 20px;
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 15%;
+}
+
+#w {
+    position: relative;
+    height: 400px;
+    width: 400px;
+}
+.pie_in, .pie_out {
+    position: absolute;
+}
+
+.pie_in {
+    top: 0px;
+    left: 0px;
+}
+
+.pie_out {
+    border-radius: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

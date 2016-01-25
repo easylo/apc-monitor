@@ -83,7 +83,7 @@ body{
 	margin:0 0 1em;
 	font-weight: 600;
 }
-.line_left ul li,.area_chart_left_r ul li{
+.line_left ul li,.area_chart_left_r ul li,.area_chart_left_l ul li{
 	display:block;
 	font-size:1em;
 	color:#000;
@@ -98,7 +98,7 @@ body{
 	margin-left:3em;
 }
 */
-.line_left ul li.lab1:before,.area_chart_left_r ul li.lab1:before{
+.line_left ul li.lab1:before,.area_chart_left_r ul li.lab1:before, .area_chart_left_l ul li.lab1:before{
 
     width: 13px;
     height: 13px;
@@ -108,7 +108,7 @@ body{
     left:-15px;
     top: 15%;
 }
-.line_left ul li.lab2:before,.area_chart_left_r ul li.lab2:before{
+.line_left ul li.lab2:before,.area_chart_left_r ul li.lab2:before,.area_chart_left_l ul li.lab2:before{
 
     width: 13px;
     height: 13px;
@@ -119,7 +119,7 @@ body{
     top: 15%;
 }
 .area_chart_left_r ul li.lab3:before{
-	  
+
     width: 13px;
     height: 13px;
     border-radius: 20px;
@@ -149,14 +149,14 @@ div#container {
 /*-- area_chart --*/
 .area_chart_left{
 	float:left;
-	width:44%;
+	width:35%;
 	padding:1em;
 	background:#fff;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 .area_chart_right{
 	float:right;
-	width:44%;
+	width:35%;
 	padding:1em;
 	background:#fff;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -433,4 +433,25 @@ div#container {
 	.footer p {
 		font-size: 13px;
 	}
+}
+
+#w {
+    position: relative;
+    height: 400px;
+    width: 400px;
+}
+.pie_in, .pie_out {
+    position: absolute;
+}
+
+.pie_in {
+    top: 0px;
+    left: 0px;
+}
+
+.pie_out {
+    border-radius: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
