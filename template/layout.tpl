@@ -14,11 +14,12 @@
 
 		<link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
 
-		<script type='text/javascript' src="js/jquery-1.11.2.min.js"></script>
+		<script type='text/javascript' src="js/flot/jquery.js"></script>
 		<link href='//fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
 		<link href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,700,700italic,600italic' rel='stylesheet' type='text/css'>
 		<!-- chart -->
-		<script src="js/Chart.js"></script>
+		<script type='text/javascript' src="js/flot/jquery.flot.js"></script>
+		<script type='text/javascript' src="js/flot/jquery.flot.pie.js"></script>
 		<!-- //chart -->
 	</head>
 
@@ -30,7 +31,7 @@
 
 			<div class="footer">
 				<!--
-				<p>&copy 2016 Flat Revenue Charts. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts.</a></p>
+				<p>&copy 2016 . All rights reserved | Design by <a href="http://aaa.com">aaa.</a></p>
 			-->
 			</div>
 		</div>

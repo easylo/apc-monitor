@@ -19,13 +19,12 @@
 
 
 <div class="area_chart pie_chart">
-    
+
     <div class="area_chart_left">
         <div class="area_chart_left_main">
             <div class="area_chart_left_l">
-                <h2>[@name]</h2>
+                <h2>[@name] - Cache full count: [@expunges]</h2>
                 <h4>Up: [@duration]</h4>
-                <h4>Cache full count: [@expunges]</h4>
             </div>
             <div class="clear"> </div>
             <div class="area_chart_left_l">
@@ -43,44 +42,75 @@
         </div>
 
         <div id="w">
-            <canvas id="pie_in[@id]" height="400" width="400" style="width: 400px; height: 400px;" class="pie_in"></canvas>
-            <canvas id="pie_out[@id]" height="280" width="280" style="width: 280px; height: 280px;" class="pie_out"></canvas>
+            <div id="pie_in[@id]" height="400" width="400" style="width: 400px; height: 400px;" class="pie_in"></div>
+            <div id="pie_out[@id]" height="280" width="280" style="width: 280px; height: 280px;" class="pie_out"></div>
+            <div id="pie_mem[@id]" height="180" width="180" style="width: 180px; height: 180px;" class="pie_out"></div>
         </div>
 
         <script>
-            var pieData_in[@id] = [{
-                    value: [@free],
+        $(function() {
+            var pieData_in[@id] = [
+              {
+                    data: [@free],
                     color: "[@graph1_lib1_color]",
                     label: "Free"
                 }, {
-                    value: [@used],
+                    data: [@used],
                     color: "[@graph1_lib2_color]",
                     label: "Used"
                 }
 
             ];
 
-            var pieData_out[@id] = [{
-                    value: [@hits],
+            var pieData_out[@id] = [
+              {
+                    data: [@hits],
                     color: "[@graph2_lib1_color]",
                     label: "Hits"
                 }, {
-                    value: [@misses],
+                    data: [@misses],
                     color: "[@graph2_lib2_color]",
                     label: "Misses"
                 }
 
             ];
 
-            var ctx1 = document.getElementById("pie_in[@id]").getContext("2d");
-            var myChart1 = new Chart(ctx1).Doughnut(pieData_in[@id], {
-                percentageInnerCutout: 80
-            });
+            var pieData_mem[@id] = [
+              {
+                    data: [@memfree],
+                    color: "[@graph3_lib1_color]",
+                    label: "Free"
+                }, {
+                    data: [@memused],
+                    color: "[@graph3_lib2_color]",
+                    label: "Used"
+                }
 
-            var ctx2 = document.getElementById("pie_out[@id]").getContext("2d");
-            var myChart2 = new Chart(ctx2).Doughnut(pieData_out[@id], {
-                percentageInnerCutout: 40
-            });
+            ];
+
+            var options1 = {
+                series: {
+                    pie: {
+                        innerRadius: 0.75,
+                        show: true,
+                        label: {
+                            show: false,
+                      }
+                    }
+                },
+                legend: {
+                    show: false
+                }
+          		}
+
+            $.plot('#pie_in[@id]', pieData_in[@id], options1);
+
+            $.plot('#pie_out[@id]', pieData_out[@id], options1);
+
+            $.plot('#pie_mem[@id]', pieData_mem[@id], options1);
+
+        });
+
         </script>
     </div>
     <div class="clear"> </div>

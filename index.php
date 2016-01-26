@@ -29,6 +29,10 @@ foreach ($Server as $name => $dataUrl) {
     $tpl->set('id', $id);
     $tpl->set('name', $name);
     $tpl->set('expunges', $data['apc']['expunges']);
+
+    $tpl->set('memfree', $data['system']['mem_avail']);
+    $tpl->set('memused', $data['system']['mem_used']);
+
     $tpl->set('free_display', $data['apc']['free_display']);
     $tpl->set('free', $data['apc']['free']);
     $tpl->set('free_p', $data['apc']['free_p']);
@@ -46,6 +50,9 @@ foreach ($Server as $name => $dataUrl) {
     $tpl->set('graph1_lib2_color', '#e5e8eb'); // 2bbfba // green
     $tpl->set('graph2_lib1_color', '#2bbfba'); // 5dd0fb// blue
     $tpl->set('graph2_lib2_color', '#e5e8eb');
+
+    $tpl->set('graph3_lib1_color', '#F2D544'); // 5dd0fb// blue
+    $tpl->set('graph3_lib2_color', '#e5e8eb');
 
     $tpl->set('graph1_title', 'Memory Usage');
     $tpl->set('graph2_title', 'Hits & Misses');

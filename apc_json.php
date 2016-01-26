@@ -58,6 +58,19 @@ if (!function_exists('bsize')) {
 	}
 }
 
+if (!function_exists('getSystemMemInfo')) {
+function getSystemMemInfo()
+{
+    $data = explode("\n", file_get_contents("/proc/meminfo"));
+    $meminfo = array();
+    foreach ($data as $line) {
+    	list($key, $val) = explode(":", $line);
+    	$meminfo[$key] = trim($val);
+    }
+    return $meminfo;
+}
+}
+
 $cache_user = apc_cache_info('user', 1);
 $mem=apc_sma_info();
 
@@ -85,6 +98,19 @@ if( !isset($cache['num_hits']) || !$cache['num_hits']) {
 }
 
 
+
+$memorySystem = getSystemMemInfo();
+$memoryTotal  = intval(trim( str_ireplace('kb', '', $memorySystem['MemTotal'])));
+$memoryFree  = intval(trim( str_ireplace('kb', '', $memorySystem['MemFree'])));
+$memoryUsed  = $memoryTotal - $memoryFree ;
+
+$data['system'] = array(
+ 	'name' => gethostname(),
+
+ 	'mem_used' => $memoryUsed,
+ 	'mem_avail' => $memoryFree,
+ 	'mem_size' => $memoryTotal
+);
 
 $apcversion = phpversion('apc');
 $phpversion = phpversion();
