@@ -61,12 +61,20 @@ if (!function_exists('bsize')) {
 if (!function_exists('getSystemMemInfo')) {
 function getSystemMemInfo()
 {
+	$meminfo = array();
+	if(file_exists("/proc/meminfo")){
+
+
     $data = explode("\n", file_get_contents("/proc/meminfo"));
-    $meminfo = array();
+
     foreach ($data as $line) {
     	list($key, $val) = explode(":", $line);
     	$meminfo[$key] = trim($val);
     }
+}else{
+	$meminfo['MemTotal'] = 0;
+	$meminfo['MemFree'] = 0;
+}
     return $meminfo;
 }
 }
